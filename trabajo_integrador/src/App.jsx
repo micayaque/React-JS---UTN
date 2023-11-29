@@ -8,9 +8,8 @@ function App() {
 
   return (
     <>
-     <div className='big-box'>
-      <TaskItem/>
-     </div>
+    <div className='big-box'><TaskItem/></div>
+            
     </>
   )
 }

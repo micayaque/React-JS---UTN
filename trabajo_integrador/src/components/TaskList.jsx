@@ -1,6 +1,7 @@
 import {React, useState} from 'react';
 import {TaskForm} from './TaskForm'
-import { FaCheck } from "react-icons/fa";
+import { IoCheckmarkOutline } from "react-icons/io5";
+import { FiSquare } from "react-icons/fi";
 
 
 // Este componente deberá mostrar la lista de tareas.
@@ -11,19 +12,18 @@ import { FaCheck } from "react-icons/fa";
 // import { IconName } from "react-icons/hi";
 
 function TaskList({tasks, completeTask}){
-    const [edit, setEdit] = useState({id:null, value:''});
+    // const [edit, setEdit] = useState({id:null, value:''});
+    //onClick={() => setEdit({id: task.id, value: task.value})}
     
     return tasks.map((task, index) => (
-        <div className={task.completed ? 'task-complete' : 'task-incomplete'} key={index}>
-            <div className="icons">
-                <div className='task-container' key={task.id} onClick={() => completeTask(task.id)}>
-                    <FaCheck 
-                    className='check-icon'
-                    onClick={() => setEdit({id: task.id, value: task.value})}/>
+                <div className='task-container' key={index}>
+                    
+                    <button className='check-list'>
+                        {task.completed ? <IoCheckmarkOutline className='check-icon' key={task.id} onClick={() => completeTask(task.id)}/> : <FiSquare className='check-square' key={task.id} onClick={() => completeTask(task.id)}/>}
+                    </button>
+                    
                     <p className={!task.completed ? 'task-text' : 'line-through'}>{task.text}</p>
                 </div>
-            </div>
-        </div>
     ))
 }
 

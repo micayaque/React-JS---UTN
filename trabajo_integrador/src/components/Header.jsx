@@ -92,7 +92,6 @@ switch (currentMonth) {
 
 }
 
-
 function Header(tasks){
 
     return(
@@ -101,7 +100,7 @@ function Header(tasks){
                      {/* acá no debería usar task id sino la cantidad de tareas que quedan
                      por completar pero no llegue a terminarlo */}
                     <div className='num-tasks'><b>{taskId}</b> Task</div>
-                    <div className='day'>{weekDay + ', ' + currentDate.getDate() + 'th'}</div>
+                    <div className='day'>{weekDay + ', ' + currentDate.getDate() + 'th'} </div>
                 <li className='month'>{month}</li> 
             </div>
         </>

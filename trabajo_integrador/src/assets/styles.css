@@ -19,13 +19,15 @@
   
   .principal-box {
     
-    background: rgb(127, 255, 180);
+    background: rgb(120, 255, 170);
     color: white;
     width: 100%;
     height: 100%;
     padding: 1rem;   
   
     display: block;
+
+    position: relative;
   }
   
   .day{
@@ -41,8 +43,7 @@
   
     justify-content: flex-end;
   
-    margin-top: 30px;
-    
+    margin-top: 20px;
   
   }
   
@@ -55,6 +56,7 @@
     font-weight: 50;
   
     margin-right: 20px;
+
   
   }
   
@@ -68,6 +70,9 @@
     float: left;
     margin-top: 40px;
     margin-left: 20px;
+
+    position: fixed;
+    top: 2%;
   
   }
   
@@ -81,23 +86,57 @@
   
   }
 
+
   .add-task-container{
     width: 100%;
     height: 100%;
+  }
+
+  .new-task-input-hidden{
+    display: none;
+  }
+
+  .add-task-button-container{
+    width: 50px;
+    height: 50px;
+    float: right;
+    position: fixed;
+    bottom: 13%;
+    right: 32%;
   }
 
   .add-task-button{
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: rgb(127, 255, 180);
+    background-color: rgb(120, 255, 170);
     color: white;
 
   }
 
+  .add-button{
+    height: 50%;
+    width: 50%;
+  }
+
+  .list-container{
+    height: 450px;
+    overflow-y: scroll;
+    position: relative;
+  }
+
   .new-task-input{
-    width: 70%;
-    height: 100%;
+    width: 100%;
+    height: 50px;
+    font-family: 'PT Sans';
+    font-size: 1rem;
+  }
+
+  .list-container::-webkit-scrollbar{
+    width: 3px;
+    height: 20px;
+    background-color: lightgray;
+
   }
 
   .task-container{
@@ -123,7 +162,7 @@
 
   .check-icon{
     float: left;
-    background-color:  rgb(127, 255, 180);
+    background-color: rgb(120, 255, 170);
     border: none;
     color: white;
     width: 100%;
@@ -156,5 +195,13 @@
   }
 
   .task-container:hover{
-    border-left: 5px solid rgb(127, 255, 180);
+    border-left: 5px solid rgb(120, 255, 170);
+  }
+
+  .task-container:hover button{
+    margin-left: 25px;
+  }
+
+  .task-container:hover p{
+    margin-left: 15px;
   }

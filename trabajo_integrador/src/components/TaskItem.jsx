@@ -4,6 +4,7 @@ import TaskList from './TaskList';
 import Header from './Header';
 
 var numTasks = 0;
+var taskId=0;
 
 function TaskItem () {
 
@@ -19,9 +20,7 @@ function TaskItem () {
         const newTasks = [...tasks, task];
         setTasks(newTasks);
         numTasks++;
-
-        // para visualizar los objetos task
-         console.log(tasks, task);
+        taskId++;
     };
 
     const completeTask = id => {
@@ -33,7 +32,7 @@ function TaskItem () {
                 } else {
                     numTasks--;
                 }
-                
+
                 task.completed = !task.completed;
             }
             
@@ -46,11 +45,15 @@ function TaskItem () {
     <>
         <div>
             <Header tasks={tasks}/>
-            <div className='list-container'><TaskList tasks={tasks} completeTask={completeTask}/></div>
-            <TaskForm onSubmit={addTask} />
+            <div className='list-container'>
+                <TaskForm onSubmit={addTask} />
+                <TaskList tasks={tasks} completeTask={completeTask}/>
+                
+            </div>
+            
         </div>
     </>  
     );
 }
 
-export {TaskItem, numTasks};
+export {TaskItem, numTasks, taskId};

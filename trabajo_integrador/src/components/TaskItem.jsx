@@ -3,6 +3,8 @@ import {TaskForm} from './TaskForm';
 import TaskList from './TaskList';
 import Header from './Header';
 
+var numTasks = 0;
+
 function TaskItem () {
 
     const [tasks, setTasks] = useState([]);
@@ -14,18 +16,27 @@ function TaskItem () {
         }
 
         // sino
-        const newTasks = [task, ...tasks];
+        const newTasks = [...tasks, task];
         setTasks(newTasks);
+        numTasks++;
 
         // para visualizar los objetos task
-         console.log(task,...tasks);
+         console.log(tasks, task);
     };
 
     const completeTask = id => {
         let updatedTasks = tasks.map(task => {
+            
             if(task.id === id){
+                if(task.completed){
+                    numTasks++;    
+                } else {
+                    numTasks--;
+                }
+                
                 task.completed = !task.completed;
             }
+            
             return task;
         });
         setTasks(updatedTasks)
@@ -42,4 +53,4 @@ function TaskItem () {
     );
 }
 
-export default TaskItem;
+export {TaskItem, numTasks};

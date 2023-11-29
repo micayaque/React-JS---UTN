@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header'
-import TaskItem from './components/TaskItem'
+import {TaskItem} from './components/TaskItem'
 
 import './assets/styles.css'
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { taskId } from './TaskForm';
 
+import { numTasks } from './TaskItem';
+
 const currentDate = new Date();
 
 let currentDay = currentDate.getDay();
@@ -99,7 +101,7 @@ function Header(tasks){
             <div className='principal-box'>
                      {/* acá no debería usar task id sino la cantidad de tareas que quedan
                      por completar pero no llegue a terminarlo */}
-                    <div className='num-tasks'><b>{taskId}</b> Task</div>
+                    <div className='num-tasks'><b>{numTasks}</b> Task</div>
                     <div className='day'>{weekDay + ', ' + currentDate.getDate() + 'th'} </div>
                 <li className='month'>{month}</li> 
             </div>

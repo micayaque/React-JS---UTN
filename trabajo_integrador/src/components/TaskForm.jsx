@@ -35,7 +35,7 @@ function TaskForm(props) {
                     placeholder='Agrega una nueva tarea'
                     value={input}
                     name='text'
-                    className='task-input'
+                    className='new-task-input'
                     onChange={handldeChange} 
                     />
                     <button className='add-task-button' ><HiPlus className='add-button'/></button>

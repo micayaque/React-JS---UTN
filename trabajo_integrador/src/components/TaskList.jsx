@@ -4,6 +4,7 @@ import { IoCheckmarkOutline } from "react-icons/io5";
 import { FiSquare } from "react-icons/fi";
 
 
+
 // Este componente deberá mostrar la lista de tareas.
 // Recibirá como propiedades la lista de tareas y funciones para gestionar eventos
 // relacionados con las tareas (por ejemplo, marcar como completada, eliminar, etc.).
@@ -17,7 +18,6 @@ function TaskList({tasks, completeTask}){
     
     return tasks.map((task, index) => (
                 <div className='task-container' key={index}>
-                    
                     <button className='check-list'>
                         {task.completed ? <IoCheckmarkOutline className='check-icon' key={task.id} onClick={() => completeTask(task.id)}/> : <FiSquare className='check-square' key={task.id} onClick={() => completeTask(task.id)}/>}
                     </button>

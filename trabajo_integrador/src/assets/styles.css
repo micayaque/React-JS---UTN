@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: rgb(253, 253, 243);
+  }
+  
+  .big-box{
+    width: 500px;
+    margin: 2% auto;
+  }
+  
+  .principal-box {
+    
+    background: rgb(127, 255, 180);
+    color: white;
+    width: 100%;
+    height: 170px;
+    padding: 1rem;   
+  
+    display: block;
+  }
+  
+  .day{
+    text-align: right;
+    font-family: 'PT Sans';
+    color: white;
+    font-size: 2.3rem;
+  
+    /*float: right;*/
+    
+    font-weight: 500;
+  
+    padding: 0;
+    margin-right: 20px;
+  
+    justify-content: flex-end;
+  
+    margin-top: 30px;
+    
+  
+  }
+  
+  .month{
+    text-align: right;
+    font-family: 'PT Sans';
+    color: rgb(244, 241, 241);
+    font-size: 1.5rem;
+    
+    font-weight: 50;
+  
+    margin-right: 20px;
+  
+  }
+  
+  .num-tasks {
+    font-family: 'PT Sans';
+    color: white;
+    font-size: 1.5rem;
+    
+    font-weight: 400;
+  
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+  
+  }
+  
+  .num-tasks b {
+    align-content: left;
+    font-family: 'PT Sans';
+    color: white;
+    font-size: 2rem;
+    
+    font-weight: 400;
+  
+  }
+  
+  .add-task-container{
+    width: 500px;
+    height: 70px;
+    margin: 10px;
+  }
+
+  .task-input{
+    width: 380px;
+    height: 100%;
+    border-color: black;
+    border-width: 8px;
+    border-bottom-right-radius: 40%;
+  }
+
+  .task-button{
+    width: 70px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(127, 255, 180);
+  }
+
+  .add-button{
+    color: white;
+    width: 100%;
+  }
+
+  .check-icon{
+    float: left;
+    margin: 10px;
+
+  }
+
+  .task-text{
+    margin: 20px;
+  }
+
+  .task.container{
+    border: 100px;
+    border-color: black;
+  }
+
+  .line-through{
+    color: lightgray;
+    text-decoration: line-through;
+
+  }

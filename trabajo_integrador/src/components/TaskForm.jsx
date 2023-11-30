@@ -1,12 +1,16 @@
 import {React, useState} from 'react';
 import { HiPlus } from "react-icons/hi";
 import { taskId } from './TaskItem';
+import { CiSaveDown1 } from "react-icons/ci";
+
 
 // enviará la nueva tarea a la lista principal (TaskList)
 
 function TaskForm(props) {
     // Utilizará el estado local para gestionar la entrada del usuario 
     const [input, setInput] = useState('');
+
+    const [btnState, setBtnState] = useState(false);
 
     const handldeChange = e => {
         setInput(e.target.value);
@@ -21,14 +25,18 @@ function TaskForm(props) {
         });
 
         setInput('');
+        setBtnState(btnState => !btnState);
     };
 
-    const [clase, setClase] = useState('new-task-input-hidden');
+    function handleClick(){
+        setBtnState(btnState => !btnState);
+    }
+    let toggleClassCheck = btnState ? 'form-active' : 'form-hidden';
 
     return(
         <>
             {/* Este componente contendrá un formulario para agregar nuevas tareas. */}
-            <form onSubmit={handleSubmit} className='task-form' >
+            <form onSubmit={handleSubmit} className={toggleClassCheck} >
                 <div className='add-task-container'>
                     
                     <div><input 
@@ -36,13 +44,13 @@ function TaskForm(props) {
                     placeholder='Agrega una nueva tarea'
                     value={input}
                     name='text'
-                    className='new-task-input'
+                    className='add-task-input'
                     onChange={handldeChange} 
                     /></div>
-                                        
                 </div>
-                <div className='add-task-button-container'><button className='add-task-button' ><HiPlus className='add-button'/></button></div>
+                <button ><CiSaveDown1 className='save-task-button'/></button>
             </form>
+            <div className='add-task-button-container'><button className='add-task-button' ><HiPlus onClick={handleClick} className='add-button'/></button></div>
         </>
     )
 }

@@ -101,8 +101,8 @@ function Header(tasks){
                      {/* acá no debería usar task id sino la cantidad de tareas que quedan
                      por completar pero no llegue a terminarlo */}
                     <div className='num-tasks'><b>{numTasks}</b> Task</div>
-                    <div className='day'>{weekDay + ', ' + currentDate.getDate() + 'th'} </div>
-                <li className='month'>{month}</li> 
+                    <div className='day'><b>{weekDay}</b>{', ' + currentDate.getDate() + 'th'} </div>
+                    <li className='month'>{month}</li> 
             </div>
         </>
         

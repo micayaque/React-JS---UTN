@@ -96,10 +96,8 @@
     height: 50px;
     float: right;
     position: fixed;
-
-    display: block;
-    margin-left: 320px;
-    margin-top: 375px;
+    bottom: 11%;
+    right: 38%;
   }
 
   .add-task-button{
@@ -136,7 +134,7 @@
     margin-bottom: 5px;
   }
 
-  .hidden{
+  .form-hidden{
     display: none;
   }
 
@@ -148,8 +146,6 @@
 
     position: absolute;
     top: 0px;
-
-    margin-left: 20px;
   }
 
   .save-task-button{

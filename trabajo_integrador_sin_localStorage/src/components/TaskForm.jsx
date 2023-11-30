@@ -31,8 +31,7 @@ function TaskForm(props) {
     function handleClick(){
         setBtnState(btnState => !btnState);
     }
-    let toggleClassCheck = btnState ? 'form-active' : 'hidden';
-    let hiddeButtonCheck = btnState ? 'hidden' : 'add-task-button-container';
+    let toggleClassCheck = btnState ? 'form-active' : 'form-hidden';
 
     return(
         <>
@@ -51,7 +50,7 @@ function TaskForm(props) {
                 </div>
                 <button ><CiSaveDown1 className='save-task-button'/></button>
             </form>
-            <div className={hiddeButtonCheck}><button className='add-task-button' ><HiPlus onClick={handleClick} className='add-button'/></button></div>
+            <div className='add-task-button-container'><button className='add-task-button' ><HiPlus onClick={handleClick} className='add-button'/></button></div>
         </>
     )
 }

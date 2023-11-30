@@ -1,4 +1,4 @@
-import React , {useEffect, useState} from 'react';
+import React , {useState} from 'react';
 import {TaskForm} from './TaskForm';
 import TaskList from './TaskList';
 import Header from './Header';
@@ -9,15 +9,6 @@ var taskId=0;
 function TaskItem () {
 
     const [tasks, setTasks] = useState([]);
-
-    // agregar a localStorage
-    useEffect(() => {
-        const data = window.localStorage.getItem('taskItem');
-        if(data) setTasks('lists', JSON.parse(data));
-
-        
-
-    }, [tasks]);
 
     const addTask = task => {
         // si el texto esta vacio o no es valido

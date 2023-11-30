@@ -12,8 +12,19 @@ const getLocalStorage = () => {
     }
 };
 
-var taskId=localStorage.getItem("id");
-var numTasks=localStorage.getItem("num");
+
+var taskId= localStorage.getItem("id");
+
+var numTasks = localStorage.getItem("num") ;
+
+if(numTasks == null){
+    numTasks = 0;
+}
+
+if(taskId == null){
+    taskId = 0;
+}
+
 
 function TaskItem () {
 

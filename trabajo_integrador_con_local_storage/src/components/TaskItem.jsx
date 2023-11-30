@@ -3,38 +3,42 @@ import {TaskForm} from './TaskForm';
 import TaskList from './TaskList';
 import Header from './Header';
 
-var numTasks = 0;
-var taskId=0;
+const getLocalStorage = () => {
+    let tasks = localStorage.getItem("list");
+    if(tasks){
+        return (tasks = JSON.parse(localStorage.getItem("list")));
+    } else {
+        return [];
+    }
+};
+
+var taskId=localStorage.getItem("id");
+var numTasks=localStorage.getItem("num");
 
 function TaskItem () {
 
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(getLocalStorage());
 
-    // agregar a localStorage
     useEffect(() => {
-        const data = window.localStorage.getItem('taskItem');
-        if(data) setTasks('lists', JSON.parse(data));
-
-        
-
+        localStorage.setItem("list", JSON.stringify(tasks));
     }, [tasks]);
+
+    localStorage.setItem("num", numTasks);
+    localStorage.setItem("id", taskId);
 
     const addTask = task => {
         // si el texto esta vacio o no es valido
         if(!task.text || /^\s*$/.test(task.text)){
             return;
         }
-
-        // sino
         const newTasks = [...tasks, task];
         setTasks(newTasks);
-        numTasks++;
         taskId++;
+        numTasks++;
     };
 
     const completeTask = id => {
-        let updatedTasks = tasks.map(task => {
-            
+        let updatedTasks = tasks.map(task => {            
             if(task.id === id){
                 if(task.completed){
                     numTasks++;    
@@ -44,7 +48,6 @@ function TaskItem () {
 
                 task.completed = !task.completed;
             }
-            
             return task;
         });
         setTasks(updatedTasks)

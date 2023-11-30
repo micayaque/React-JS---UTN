@@ -10,8 +10,6 @@ import { FiSquare } from "react-icons/fi";
 // relacionados con las tareas (por ejemplo, marcar como completada, eliminar, etc.).
 // Cada tarea debe representarse mediante un componente TaskItem.
 
-// import { IconName } from "react-icons/hi";
-
 function TaskList({tasks, completeTask}){
     // const [edit, setEdit] = useState({id:null, value:''});
     //onClick={() => setEdit({id: task.id, value: task.value})}

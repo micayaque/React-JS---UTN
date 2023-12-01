@@ -15,6 +15,7 @@
     width: 400px;
     height: 100px;
     margin: 2% auto;
+    margin-top: 50px;
   }
   
   .principal-box {
@@ -73,7 +74,7 @@
     font-weight: 400;
   
     float: left;
-    margin-top: 40px;
+    margin-top: 70px;
     margin-left: 20px;
 
     position: fixed;
@@ -99,7 +100,7 @@
 
     display: block;
     margin-left: 320px;
-    margin-top: 375px;
+    margin-top: 310px;
   }
 
   .add-task-button{
@@ -116,10 +117,16 @@
   }
 
   .list-container{
-    height: 450px;
+    height: 369px;
     overflow-y: scroll;
-    position: relative;
     background-color: white;
+  }
+
+  .list-container::-webkit-scrollbar{
+    width: 4px;
+    height: 20px;
+    background-color: lightgray;
+
   }
 
   .add-task-container{
@@ -130,10 +137,11 @@
 
   .form-active{
     position: relative;
-    width: 370px;
+    width: 400px;
     height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: white;
   }
 
   .hidden{
@@ -141,7 +149,7 @@
   }
 
   .add-task-input{
-    width: 100%;
+    width: 90%;
     height: 50px;
     font-family: 'PT Sans';
     font-size: 1rem;
@@ -167,12 +175,7 @@
     border-radius: 50%;
   }
 
-  .list-container::-webkit-scrollbar{
-    width: 3px;
-    height: 20px;
-    background-color: lightgray;
 
-  }
 
   .task-container{
     background-color: white;

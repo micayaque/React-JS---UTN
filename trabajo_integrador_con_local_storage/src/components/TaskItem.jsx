@@ -68,8 +68,9 @@ function TaskItem () {
     <>
         <div>
             <Header tasks={tasks}/>
+            <TaskForm onSubmit={addTask} />
             <div className='list-container'>
-                <TaskForm onSubmit={addTask} />
+                
                 <TaskList tasks={tasks} completeTask={completeTask}/>
                 
             </div>

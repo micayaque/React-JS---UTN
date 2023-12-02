@@ -8,7 +8,6 @@ let currentDay = currentDate.getDay();
 let currentMonth = currentDate.getMonth();
 
 let weekDay;
-
 switch (currentDay) {
     case 0:
     weekDay = "Sunday";
@@ -41,7 +40,6 @@ switch (currentDay) {
 }
 
 let month;
-
 switch (currentMonth) {
     case 0:
     month = "January";
@@ -93,19 +91,16 @@ switch (currentMonth) {
 
 }
 
-function Header(tasks){
+function Header(){
 
     return(
         <>
             <div className='principal-box'>
-                     {/* acá no debería usar task id sino la cantidad de tareas que quedan
-                     por completar pero no llegue a terminarlo */}
-                    <div className='num-tasks'><b>{numTasks}</b> Task</div>
-                    <div className='day'><b>{weekDay}</b>{', ' + currentDate.getDate() + 'th'} </div>
-                    <li className='month'>{month}</li> 
+                <div className='num-tasks'><b>{numTasks}</b> Task</div>
+                <div className='day'><b>{weekDay}</b>{', ' + currentDate.getDate() + 'th'} </div>
+                <li className='month'>{month}</li> 
             </div>
         </>
-        
     );
 }
 

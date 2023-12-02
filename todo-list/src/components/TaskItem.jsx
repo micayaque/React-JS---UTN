@@ -1,5 +1,6 @@
 import React , {useEffect, useState} from 'react';
-import {TaskForm} from './TaskForm';
+
+import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import Header from './Header';
 
@@ -12,9 +13,7 @@ const getLocalStorage = () => {
     }
 };
 
-
 var taskId= localStorage.getItem("id");
-
 var numTasks = localStorage.getItem("num") ;
 
 if(numTasks == null){
@@ -24,7 +23,6 @@ if(numTasks == null){
 if(taskId == null){
     taskId = 0;
 }
-
 
 function TaskItem () {
 
@@ -38,7 +36,6 @@ function TaskItem () {
     localStorage.setItem("id", taskId);
 
     const addTask = task => {
-        // si el texto esta vacio o no es valido
         if(!task.text || /^\s*$/.test(task.text)){
             return;
         }
@@ -51,11 +48,8 @@ function TaskItem () {
     const completeTask = id => {
         let updatedTasks = tasks.map(task => {            
             if(task.id === id){
-                if(task.completed){
-                    numTasks++;    
-                } else {
-                    numTasks--;
-                }
+                if(task.completed) numTasks++;    
+                else numTasks--;
 
                 task.completed = !task.completed;
             }
@@ -67,14 +61,9 @@ function TaskItem () {
     return(
     <>
         <div>
-            <Header tasks={tasks}/>
+            <Header />
             <TaskForm onSubmit={addTask} />
-            <div className='list-container'>
-                
-                <TaskList tasks={tasks} completeTask={completeTask}/>
-                
-            </div>
-            
+            <div className='list-container' > <TaskList tasks={tasks} completeTask={completeTask}/></div>
         </div>
     </>  
     );

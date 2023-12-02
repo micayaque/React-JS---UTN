@@ -1,13 +1,12 @@
 import {React, useState} from 'react';
+
 import { HiPlus } from "react-icons/hi";
-import { taskId } from './TaskItem';
 import { CiSaveDown1 } from "react-icons/ci";
 
-
-// enviará la nueva tarea a la lista principal (TaskList)
+import { taskId } from './TaskItem';
 
 function TaskForm(props) {
-    // Utilizará el estado local para gestionar la entrada del usuario 
+
     const [input, setInput] = useState('');
 
     const [btnState, setBtnState] = useState(false);
@@ -31,29 +30,28 @@ function TaskForm(props) {
     function handleClick(){
         setBtnState(btnState => !btnState);
     }
+
     let toggleClassCheck = btnState ? 'form-active' : 'hidden';
     let hiddeButtonCheck = btnState ? 'hidden' : 'add-task-button-container';
 
     return(
         <>
-            {/* Este componente contendrá un formulario para agregar nuevas tareas. */}
             <form onSubmit={handleSubmit} className={toggleClassCheck} >
                 <div className='add-task-container'>
-                    
-                    <div><input 
+                    <input 
                     type="text"
                     placeholder='Agrega una nueva tarea'
                     value={input}
                     name='text'
                     className='add-task-input'
                     onChange={handldeChange} 
-                    /></div>
+                    />
+                    <button ><CiSaveDown1 className='save-task-button'/></button>
                 </div>
-                <button ><CiSaveDown1 className='save-task-button'/></button>
             </form>
             <div className={hiddeButtonCheck}><button className='add-task-button' ><HiPlus onClick={handleClick} className='add-button'/></button></div>
         </>
-    )
+    );
 }
 
-export {TaskForm};
+export default TaskForm;
